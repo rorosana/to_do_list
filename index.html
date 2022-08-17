@@ -35,9 +35,11 @@
                 </li>
             </ul>
 
-            <form class="add text-center my-4">
-                <label for="" class="text-light">Add a new "to do"</label>
-                <input type="text" class="form-control" name="add">
+            <form onsubmit="addNewTask(event)">
+                <label for="" class="text-light">Add a new "to do" :</label>
+                <input type="text" class="form-control" name="add" autocomplete="off" placeholder="New task">
+                <button type="submit" class="addTaskButton"></button>
+                <button type="button" class="orderbutton roundBorder" onclick="renderOrderedTasks()">Ordenar</button>
             </form>
 
         </div>
