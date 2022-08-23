@@ -7,6 +7,7 @@ const dateYear = document.getElementById('dateYear');
 //Task container
 const tasksContainer = document.getElementById('tasksContainer');
 
+
 const setDate = () => {
     const date = new Date();
     dateNumber.textContent = date.toLocaleString('en', { day: 'numeric' });
@@ -26,6 +27,7 @@ const addNewTask = event => {
     tasksContainer.prepend(task);
     event.target.reset();
 };
+
 
 const changeTaskState = event => {
     event.target.classList.toggle('done');

@@ -146,7 +146,7 @@ input:focus {
 }
 
 .task {
-    background-color: var(--primary);
+    background-color: rgba(72, 0, 105, 0.562);
     padding: 15px;
     margin-top: 15px;
     color: var(--light);
@@ -154,7 +154,10 @@ input:focus {
 }
 
 .done {
-    background-color: var(--diabled);
+    background-color: rgba(0,0,0,0);
+    border-style: solid;
+    border-color: var(--light);
+    border-width: 1px;
     text-decoration: line-through;
-    color: var(--dark);
+    color: var(--light);
 }
