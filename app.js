@@ -26,7 +26,7 @@ form.addEventListener('submit', (e) => {
     console.log("button clicked");
     formValidation();
     acceptData();
-    createTask();
+    createTask(data);
 });
 
 const formValidation = () => {
@@ -47,14 +47,15 @@ const acceptData = () => {
     
 };
 
-const createTask = () => {
-    app.innerHTML = `
+const createTask = data => {
+    /*app.innerHTML*/const html  = `
         <li class="item taskGroup roundBorder">
-            <span class="opcions">${data.text}</span>
+            <span class="opcions">${data}</span>
             <i onClick="editPost(this)" class="fas fa-edit modify"></i>
             <i onClick="deletePost(this)" class="far fa-trash-alt"></i>
         </li>
     `;
+    app.innerHTML += html;
 };
 
 
