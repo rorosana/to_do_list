@@ -149,8 +149,29 @@ input:focus {
 color: var(--light);
 }
 
+ul {
+    list-style: none;
+    padding-inline-start: 0px;
+}
+
+ul li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(72, 0, 105, 0.562);
+    padding: 15px;
+    margin-left: 0px;
+    margin-top: 15px;
+    color: var(--light);
+    cursor: pointer;
+}
+
+.modify {
+    margin-left: 100px;
+}
+
 #tasksContainer {
-    background-color: var(--primary);
+    /*background-color: var(--primary);*/
     padding: 15px;
     margin-top: 15px;
     color: var(--light);

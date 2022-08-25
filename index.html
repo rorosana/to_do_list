@@ -37,8 +37,16 @@
             <button type="button" class="orderButton roundBorder" onclick="renderOrderedTasks()">Order</button>
         </form>
         <div id = "msg"></div>
+
+        <ul class="taskGroup">
+            <li class="item taskGroup roundBorder">
+                <span class="opcions">Have a good breakfast!</span>
+                <i onClick="editPost(this)" class="fas fa-edit modify"></i>
+                <i onClick="deletePost(this)" class="far fa-trash-alt"></i>
+            </li>
+        </ul>
         
-        <div id="tasksContainer"></div>
+        <!--<div id="tasksContainer"></div>-->
     </div>
 
 </body>

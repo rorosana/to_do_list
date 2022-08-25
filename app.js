@@ -15,16 +15,18 @@ const setDate = () => {
 setDate();
 
 //Task container
-const tasksContainer = document.getElementById('tasksContainer');
+//const tasksContainer = document.getElementById('tasksContainer');
 const form = document.getElementById('form');
 const input = document.getElementById('input');
 const msg = document.getElementById('msg');
+const app = document.getElementsByClassName("app");
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     console.log("button clicked");
     formValidation();
     acceptData();
+    createTask();
 });
 
 const formValidation = () => {
@@ -34,7 +36,6 @@ const formValidation = () => {
     } else {
         msg.innerHTML ="";
         console.log("success");
-        
     }
 };
 
@@ -43,12 +44,17 @@ const data = {};
 const acceptData = () => {
     data["text"] = input.value;
     console.log(data);
-    createTask();
     
 };
 
 const createTask = () => {
-    tasksContainer.innerHTML = data.text;
+    app.innerHTML = `
+        <li class="item taskGroup roundBorder">
+            <span class="opcions">${data.text}</span>
+            <i onClick="editPost(this)" class="fas fa-edit modify"></i>
+            <i onClick="deletePost(this)" class="far fa-trash-alt"></i>
+        </li>
+    `;
 };
 
 
