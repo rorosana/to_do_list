@@ -4,9 +4,6 @@ const dateText = document.getElementById('dateText');
 const dateMonth = document.getElementById('dateMonth');
 const dateYear = document.getElementById('dateYear');
 
-//Task container
-const tasksContainer = document.getElementById('tasksContainer');
-
 const setDate = () => {
     const date = new Date();
     dateNumber.textContent = date.toLocaleString('en', { day: 'numeric' });
@@ -15,7 +12,51 @@ const setDate = () => {
     dateYear.textContent = date.toLocaleString('en', { year: 'numeric' });
 };
 
-const addNewTask = event => {
+setDate();
+
+//Task container
+const tasksContainer = document.getElementById('tasksContainer');
+const form = document.getElementById('form');
+const input = document.getElementById('input');
+const msg = document.getElementById('msg');
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    console.log("button clicked");
+    formValidation();
+    acceptData();
+});
+
+const formValidation = () => {
+    if(input.value === ""){
+        msg.innerHTML = "Post cannot be blank!";
+        console.log("failure");
+    } else {
+        msg.innerHTML ="";
+        console.log("success");
+        
+    }
+};
+
+const data = {};
+
+const acceptData = () => {
+    data["text"] = input.value;
+    console.log(data);
+    createTask();
+    
+};
+
+const createTask = () => {
+    tasksContainer.innerHTML = data.text;
+};
+
+
+
+
+
+
+/*const addNewTask = event => {
     event.preventDefault();
     const { value } = event.target.taskText;
     if (!value) return;
@@ -42,7 +83,7 @@ const order = () => {
 
 const renderOrderedTasks = () => {
     order().forEach(el => tasksContainer.appendChild(el))
-}
+}*/
 
-setDate();
+
 

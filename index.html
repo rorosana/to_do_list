@@ -30,11 +30,13 @@
         </div>
        
 
-        <form onsubmit="addNewTask(event)">
-            <input type="text" name="taskText" autocomplete="off" placeholder="New task" class="roundBorder">
+        <form id = "form">
+            <input type="text" name = "" id ="input" autocomplete="off" placeholder="New task" class="roundBorder"> 
+            <!--<textarea name="" id="input" placeholder="New task" class="roundBorder" autocomplete="off"></textarea> -->
             <button type="submit" class="addTaskButton">+</button>
             <button type="button" class="orderButton roundBorder" onclick="renderOrderedTasks()">Order</button>
         </form>
+        <div id = "msg"></div>
         
         <div id="tasksContainer"></div>
     </div>

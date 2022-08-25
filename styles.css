@@ -145,7 +145,11 @@ input:focus {
     transform: scale(1.1);
 }
 
-.task {
+#msg {
+color: var(--light);
+}
+
+#tasksContainer {
     background-color: var(--primary);
     padding: 15px;
     margin-top: 15px;
