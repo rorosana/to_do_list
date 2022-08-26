@@ -38,13 +38,15 @@
         </form>
         <div id = "msg"></div>
 
-        <ul class="taskGroup app">
-            <li class="item taskGroup roundBorder">
-                <span class="opcions">Have a good breakfast!</span>
-                <i onClick="editPost(this)" class="fas fa-edit modify"></i>
-                <i onClick="deletePost(this)" class="far fa-trash-alt"></i>
-            </li>
-        </ul>
+        <div id = "taskGroup" class="roundBorder">
+            <div>
+                <p>Have a good breakfast today!</p>
+                <span class="options">
+                <i onClick="editTask(this)" class="fas fa-edit modify"></i>
+                <i onClick="deleteTask(this)" class="far fa-trash-alt"></i>
+                </span>
+            </div>
+        </div>
         
         <!--<div id="tasksContainer"></div>-->
     </div>

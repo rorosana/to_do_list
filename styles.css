@@ -74,7 +74,7 @@ hr {
 }
 
 #dateNumber {
-    font-size: 35px;
+    font-size: 40px;
 }
 
 #dateText {
@@ -149,37 +149,42 @@ input:focus {
 color: var(--light);
 }
 
-ul {
-    list-style: none;
-    padding-inline-start: 0px;
-}
 
-ul li {
+#taskGroup div {
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: rgba(72, 0, 105, 0.562);
-    padding: 15px;
-    margin-left: 0px;
-    margin-top: 15px;
+    padding-right: 15px;
+    padding-left: 15px;
+    height: 50px;
     color: var(--light);
-    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 5px;
 }
 
-.modify {
-    margin-left: 100px;
+.options {
+    display: flex;
+    gap: 25px;
 }
 
-#tasksContainer {
-    /*background-color: var(--primary);*/
-    padding: 15px;
-    margin-top: 15px;
-    color: var(--light);
-    cursor: pointer;
+i {
+   cursor: pointer; 
 }
 
 .done {
-    background-color: var(--diabled);
+    background-color: rgba(0,0,0,0);
     text-decoration: line-through;
-    color: var(--dark);
+    color: var(--light);
 }
+
+/*#tasksContainer {
+    background-color: var(--primary);
+    padding: 15px;
+    margin-top: 15px;
+    color: var(--light);
+    cursor: pointer;
+}
+
+
+}*/
