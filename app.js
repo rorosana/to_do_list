@@ -20,6 +20,20 @@ const form = document.getElementById('form');
 const input = document.getElementById('input');
 const msg = document.getElementById('msg');
 const taskGroup = document.getElementById('taskGroup');
+var count = 1;
+
+const order = () => {
+    const done = [];
+    const toDo = [];
+    taskGroup.childNodes.forEach( el => {
+        el.classList.contains('done') ? done.push(el) : toDo.push(el)
+    })
+    return [...toDo, ...done];
+};
+
+const renderOrderedTasks = () => {
+    order().forEach(el => taskGroup.appendChild(el))
+};
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -44,11 +58,13 @@ const acceptData = () => {
     data["text"] = input.value;
     console.log(data);
     createTask();
+    count++;
+    numTask();
 };
 
 const createTask = () => {
     taskGroup.innerHTML += `
-        <div class="item">
+        <div>
             <p>${data.text}</p>
             <span class="options">
                 <i onClick="editTask(this)" class="fas fa-edit modify"></i>
@@ -57,12 +73,13 @@ const createTask = () => {
         </div>
     `;
     input.value = "";
-    
     taskGroup.addEventListener('click', changeTaskState);
 };
 
 const deleteTask = (e) => {
     e.parentElement.parentElement.remove();
+    count--;
+    numTask();
 };
 
 const editTask = (e) => {
@@ -72,20 +89,20 @@ const editTask = (e) => {
 
 const changeTaskState = event => {
     event.target.classList.toggle('done');
+    count--;
+    numTask();
 };
 
-const order = () => {
-    const done = [];
-    const toDo = [];
-    tasksContainer.childNodes.forEach( el => {
-        el.classList.contains('done') ? done.push(el) : toDo.push(el)
-    })
-    return [...toDo, ...done];
-}
+//footer
+const foot = document.getElementById('foot');
 
-const renderOrderedTasks = () => {
-    order().forEach(el => tasksContainer.appendChild(el))
-}
+const numTask = () => {
+    foot.innerHTML = `
+        Remaining tasks: ${count}
+    `;
+};
+
+
 
 
 
@@ -116,7 +133,20 @@ const order = () => {
 
 const renderOrderedTasks = () => {
     order().forEach(el => tasksContainer.appendChild(el))
-}*/
+}
+
+const order = () => {
+    const done = [];
+    const toDo = [];
+    taskGroup.childNodes.forEach( el => {
+        el.classList.contains('done') ? done.push(el) : toDo.push(el)
+    })
+    return [...toDo, ...done];
+};
+
+const renderOrderedTasks = () => {
+    order().forEach(el => taskGroup.appendChild(el))
+};*/
 
 
 
