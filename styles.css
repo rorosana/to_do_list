@@ -100,7 +100,7 @@ form {
     margin: 20px 0;
     display: grid;
     grid-auto-flow: column;
-    grid-template-columns: auto 35px auto;
+    grid-template-columns: auto 35px;
     grid-column-gap: 15px;
 }
 
@@ -114,8 +114,7 @@ input:focus {
     outline: none;
 }
 
-.addTaskButton,
-.orderButton {
+.addTaskButton {
     border: none;
     font-weight: bold;
     cursor: pointer;
@@ -132,16 +131,15 @@ input:focus {
     color: white;
 }
 
-.orderButton {
+/*.orderButton {
     background-color: rgba(0,0,0,0);
     border-style: solid;
     border-color: var(--light);
     border-width: 1px;
     color: var(--light);
-}
+}*/
 
-.addTaskButton:hover,
-.orderButton:hover {
+.addTaskButton:hover {
     transform: scale(1.1);
 }
 

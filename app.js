@@ -22,19 +22,6 @@ const msg = document.getElementById('msg');
 const taskGroup = document.getElementById('taskGroup');
 var count = 1;
 
-const order = () => {
-    const done = [];
-    const toDo = [];
-    taskGroup.childNodes.forEach( el => {
-        el.classList.contains('done') ? done.push(el) : toDo.push(el)
-    })
-    return [...toDo, ...done];
-};
-
-const renderOrderedTasks = () => {
-    order().forEach(el => taskGroup.appendChild(el))
-};
-
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     console.log("button clicked");
@@ -42,7 +29,8 @@ form.addEventListener('submit', (e) => {
 });
 
 const formValidation = () => {
-    if(input.value === ""){
+    let userData = input.value;
+    if(userData.trim() === ""){
         msg.innerHTML = "Post cannot be blank!";
         console.log("failure");
     } else {
@@ -78,8 +66,6 @@ const createTask = () => {
 
 const deleteTask = (e) => {
     e.parentElement.parentElement.remove();
-    count--;
-    numTask();
 };
 
 const editTask = (e) => {
@@ -89,8 +75,6 @@ const editTask = (e) => {
 
 const changeTaskState = event => {
     event.target.classList.toggle('done');
-    count--;
-    numTask();
 };
 
 //footer
