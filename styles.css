@@ -131,14 +131,6 @@ input:focus {
     color: white;
 }
 
-/*.orderButton {
-    background-color: rgba(0,0,0,0);
-    border-style: solid;
-    border-color: var(--light);
-    border-width: 1px;
-    color: var(--light);
-}*/
-
 .addTaskButton:hover {
     transform: scale(1.1);
 }
@@ -176,14 +168,3 @@ i {
     text-decoration: line-through;
     color: var(--light);
 }
-
-/*#tasksContainer {
-    background-color: var(--primary);
-    padding: 15px;
-    margin-top: 15px;
-    color: var(--light);
-    cursor: pointer;
-}
-
-
-}*/
