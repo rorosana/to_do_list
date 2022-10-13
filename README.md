@@ -35,7 +35,4 @@ Any contribution to improve the app will be welcome!
 
 MIT
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 819eccd560d5b8d244959c67958c067776a7fbea
